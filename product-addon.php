@@ -1,9 +1,7 @@
 <?php
 /**
  * The plugin main file
- *
- *
- * @link              isheeba.com
+
  * @since             1.0.0
  * @package           Product_Addon
  *
@@ -26,3 +24,20 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 
+/**
+ * Include the  main plugin class.
+ *
+ */
+include 'includes/class-product-addon.php';
+
+
+
+/**
+ * Hooks the plugin class on `init`.
+ *
+ * @return void
+ */
+function product_addon_setup() {
+	$product_addon = new Product_Addon( __FILE__ );
+}
+add_action( 'init', 'product_addon_setup' );
